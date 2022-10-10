@@ -1,0 +1,217 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 65011712 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3535), pid=2068, tid=1204
+#
+# JRE version:  (17.0.4.1+1) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (17.0.4.1+1-LTS-2, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -ea -Dfile.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 50424 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames RunPruebas.RunPrueba
+
+Host: Intel(R) Celeron(R) N4000 CPU @ 1.10GHz, 2 cores, 3G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1889)
+Time: Sun Sep 18 23:24:53 2022 Hora est. Pacífico, Sudamérica elapsed time: 0.172993 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001d96830c8d0):  JavaThread "Unknown thread" [_thread_in_vm, id=1204, stack(0x0000003406400000,0x0000003406500000)]
+
+Stack: [0x0000003406400000,0x0000003406500000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6723ba]
+V  [jvm.dll+0x7d1e34]
+V  [jvm.dll+0x7d35de]
+V  [jvm.dll+0x7d3c43]
+V  [jvm.dll+0x243065]
+V  [jvm.dll+0x66f2d9]
+V  [jvm.dll+0x663c22]
+V  [jvm.dll+0x3011cb]
+V  [jvm.dll+0x308766]
+V  [jvm.dll+0x35846e]
+V  [jvm.dll+0x35869f]
+V  [jvm.dll+0x2d83e8]
+V  [jvm.dll+0x2d9354]
+V  [jvm.dll+0x7a3911]
+V  [jvm.dll+0x3662c1]
+V  [jvm.dll+0x782d7c]
+V  [jvm.dll+0x3e8c1f]
+V  [jvm.dll+0x3ea6c1]
+C  [jli.dll+0x527b]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x526a1]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffa2f1ca858, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001d968343190 GCTaskThread "GC Thread#0" [stack: 0x0000003406500000,0x0000003406600000] [id=5484]
+  0x000001d96834ba20 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000003406600000,0x0000003406700000] [id=6672]
+  0x000001d96834cc20 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000003406700000,0x0000003406800000] [id=6912]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffa2ea18dd7]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001d9683092d0] Heap_lock - owner thread: 0x000001d96830c8d0
+
+Heap address: 0x00000000c2e00000, size: 978 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x00000000c2e00000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffa2edfb869]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (1 events):
+Event: 0.016 Loaded shared library C:\Program Files\Java\jdk-17.0.4.1\bin\java.dll
+
+
+Dynamic libraries:
+0x00007ff7c4060000 - 0x00007ff7c4070000 	C:\Program Files\Java\jdk-17.0.4.1\bin\javaw.exe
+0x00007ffa4d190000 - 0x00007ffa4d388000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffa4cf50000 - 0x00007ffa4d00d000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffa4ae20000 - 0x00007ffa4b0ee000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffa46be0000 - 0x00007ffa46c70000 	C:\WINDOWS\SYSTEM32\apphelp.dll
+0x00007ffa4aa40000 - 0x00007ffa4ab40000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffa460a0000 - 0x00007ffa460ba000 	C:\Program Files\Java\jdk-17.0.4.1\bin\VCRUNTIME140.dll
+0x00007ffa400b0000 - 0x00007ffa400c8000 	C:\Program Files\Java\jdk-17.0.4.1\bin\jli.dll
+0x00007ffa4cbc0000 - 0x00007ffa4cc6e000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffa4b9b0000 - 0x00007ffa4ba4e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffa4c8e0000 - 0x00007ffa4c97c000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffa4c9b0000 - 0x00007ffa4cad5000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffa4cc70000 - 0x00007ffa4ce10000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffa4aa10000 - 0x00007ffa4aa32000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffa4c700000 - 0x00007ffa4c72a000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffa4ac10000 - 0x00007ffa4ad1b000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffa4ab70000 - 0x00007ffa4ac0d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffa36390000 - 0x00007ffa3662a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ffa41200000 - 0x00007ffa4120a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffa4c980000 - 0x00007ffa4c9b0000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffa43060000 - 0x00007ffa4306c000 	C:\Program Files\Java\jdk-17.0.4.1\bin\vcruntime140_1.dll
+0x00007ffa2c500000 - 0x00007ffa2c58d000 	C:\Program Files\Java\jdk-17.0.4.1\bin\msvcp140.dll
+0x00007ffa2e730000 - 0x00007ffa2f2f2000 	C:\Program Files\Java\jdk-17.0.4.1\bin\server\jvm.dll
+0x00007ffa4d140000 - 0x00007ffa4d148000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffa43050000 - 0x00007ffa43059000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffa4ce10000 - 0x00007ffa4ce7b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffa42fd0000 - 0x00007ffa42ff7000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffa49180000 - 0x00007ffa49192000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffa42650000 - 0x00007ffa4265a000 	C:\Program Files\Java\jdk-17.0.4.1\bin\jimage.dll
+0x00007ffa48e50000 - 0x00007ffa49034000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffa35ae0000 - 0x00007ffa35b0c000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffa4b160000 - 0x00007ffa4b1e2000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffa3cef0000 - 0x00007ffa3cf15000 	C:\Program Files\Java\jdk-17.0.4.1\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-17.0.4.1\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;C:\Program Files\Java\jdk-17.0.4.1\bin\server
+
+VM Arguments:
+jvm_args: -ea -Dfile.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages 
+java_command: org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 50424 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames RunPruebas.RunPrueba
+java_class_path (initial): C:\Users\NICOLAS\eclipse-workspace\SemilleroAppium\target\test-classes;C:\Users\NICOLAS\eclipse-workspace\SemilleroAppium\target\classes;C:\Users\NICOLAS\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\NICOLAS\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\NICOLAS\.m2\repository\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;C:\Users\NICOLAS\.m2\repository\commons-io\commons-io\2.8.0\commons-io-2.8.0.jar;C:\Users\NICOLAS\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\NICOLAS\.m2\repository\org\apache\poi\poi\4.1.2\poi-4.1.2.jar;C:\Users\NICOLAS\.m2\repository\commons-codec\commons-codec\1.13\commons-codec-1.13.jar;C:\Users\NICOLAS\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\NICOLAS\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\NICOLAS\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.jar;C:\Users\NICOLAS\.m2\repository\org\apache\poi\poi-ooxml\4.1.2\poi-ooxml-4.1.2.jar;C:\Users\NICOLAS\.m2\repository\org\apache\poi\poi-ooxml-schemas\4.1.2\poi-ooxml-schemas-4.1.2.jar;C:\Users\NICOLAS\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar;C:\Users\NICOLAS\.m2\repository\org\apache\commons\commons-compress\1.19\commons-compress-1.19.jar;C:\Users\NICOLAS\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar;C:\Users\NICOLAS\.m2\repository\org\seleniumhq\selenium\selenium-java\3.141.59\selenium-java-3.141.59.jar;C:\Users\NICOLAS\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\NICOLAS\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\NICOLAS\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.141.59\selenium-edge-driver-3.141.59.jar;C:\Users\NICOLAS\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.141.59\se
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 2                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 2                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 65011712                                  {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1025507328                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5826188                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122916026                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122916026                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 1025507328                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-17.0.4.1
+PATH=C:/Program Files/Java/jdk-17.0.4.1/bin/server;C:/Program Files/Java/jdk-17.0.4.1/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-17.0.4.1\bin;"C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem";C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Users\NICOLAS\AppData\Local\Android\Sdk\tools;C:\Users\NICOLAS\AppData\Local\Android\Sdk\platform-tools;"C:\Program Files\Java\jdk-17.0.4.1\bin;C:\Users\NICOLAS\AppData\Local\Android\Sdk\platform-tools\;C:\Users\NICOLAS\AppData\Local\Android\Sdk\build-tools\;C:\Users\NICOLAS\AppData\Local\Android\Sdk\tools\;C:\Program Files\Android\Android Studio\bin";C:\Users\NICOLAS\AppData\Local\Microsoft\WindowsApps;C:\Program Files\apache-maven-3.8.6\bin;C:\Users\NICOLAS\AppData\Roaming\npm;C:\Users\NICOLAS\Desktop;
+USERNAME=Nico
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 122 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.1889)
+OS uptime: 0 days 8:55 hours
+
+CPU: total 2 (initial active 2) (2 cores per cpu, 1 threads per core) family 6 model 122 stepping 1 microcode 0x32, cx8, cmov, fxsr, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, tsc, tscinvbit, aes, erms, clmul, sha, clflush, clflushopt
+
+Memory: 4k page, system-wide physical 3911M (361M free)
+TotalPageFile size 11285M (AvailPageFile size 30M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 47M, peak: 109M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (17.0.4.1+1-LTS-2) for windows-amd64 JRE (17.0.4.1+1-LTS-2), built on Aug 16 2022 18:32:06 by "mach5one" with MS VC++ 16.8 / 16.9 (VS2019)
+
+END.
